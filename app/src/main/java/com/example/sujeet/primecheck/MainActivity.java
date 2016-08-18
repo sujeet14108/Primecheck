@@ -1,9 +1,11 @@
 package com.example.sujeet.primecheck;
 
 
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -73,6 +75,33 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+    public void showt(String text) {
+        TextView textview = new TextView(MainActivity.this);
+        textview.setText(text);
+        textview.setTextSize(50);
+        textview.setBackgroundColor(Color.WHITE);
+        textview.setTextColor(Color.GREEN);
+        textview.setPadding(30,30,30,30);
+        Toast toast = new Toast(MainActivity.this);
+        toast.setView(textview);
+        toast.setDuration(Toast.LENGTH_SHORT);
+        toast.setGravity(Gravity.BOTTOM, 0, 0);
+        toast.show();
+    }
+    public void showr(String text) {
+        TextView textview = new TextView(MainActivity.this);
+        textview.setText(text);
+        textview.setTextSize(50);
+        textview.setBackgroundColor(Color.WHITE);
+        textview.setTextColor(Color.RED);
+        textview.setPadding(30,30,30,30);
+        Toast toast = new Toast(MainActivity.this);
+        toast.setView(textview);
+        toast.setDuration(Toast.LENGTH_SHORT);
+        toast.setGravity(Gravity.BOTTOM, 0, 0);
+        toast.show();
+    }
+
     public void onClick(View v) {
 
         int r = prime(x);
@@ -81,18 +110,22 @@ public class MainActivity extends AppCompatActivity {
         switch (v.getId()) {
             case R.id.no:
                 if (r == 0)
-                    Toast.makeText(MainActivity.this, "Congo!!", Toast.LENGTH_SHORT).show();
+                    showt("Congo!");
+                   // Toast.makeText(MainActivity.this, "Congo!!", Toast.LENGTH_SHORT).show();
+
                 else
-                    Toast.makeText(MainActivity.this, "Wrong", Toast.LENGTH_SHORT).show();
+                showr("Wrong!");
+                   // Toast.makeText(MainActivity.this, "Wrong", Toast.LENGTH_SHORT).show();
 
                 x = getRandomInteger(1, 1000);
                 num.setText("Is "+Integer.toString(x) +" is a Prime Number?");
+
                 break;
             case R.id.yes:
                 if (r == 0)
-                    Toast.makeText(MainActivity.this, "Wrong", Toast.LENGTH_SHORT).show();
+                    showr("Wrong!");
                 else
-                Toast.makeText(MainActivity.this, "Congo!!", Toast.LENGTH_SHORT).show();
+                    showt("Congo!");
 
 
                 x = getRandomInteger(1, 1000);

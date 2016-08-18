@@ -12,10 +12,23 @@
     tools:context="com.example.sujeet.primecheck.MainActivity">
 
     <TextView
-        android:id="@+id/txt"
         android:layout_width="wrap_content"
-        android:layout_height="16dp"
-        android:text="" />
+        android:layout_height="wrap_content"
+        android:text="Are you a Prime Master!!"
+        android:textColor="#64DD17"
+        android:textSize="30dp"
+
+        android:id="@+id/textView"
+         />
+
+    <TextView
+        android:id="@+id/txt"
+        android:textSize="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text=""
+        android:textStyle="bold"
+        android:textColor="#ff3d00" />
 
         <LinearLayout
             android:layout_width="wrap_content"
