@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-    private static final String TAG = "QuizActivity";
+    private static final String TAG = "PrimeCheck";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -151,33 +151,33 @@ public class MainActivity extends AppCompatActivity {
     public void onStart()
     {
         super.onStart();
-        Log.d(TAG, "Inside OnStart");
+        Log.d(TAG, "OnStart");
     }
 
     @Override
     public void onPause()
     {
         super.onPause();
-        Log.d(TAG,"Inside OnPause");
+        Log.d(TAG," OnPause");
     }
 
     @Override
     public void onResume(){
         super.onResume();
-        Log.d(TAG,"Inside OnResume");
+        Log.d(TAG," OnResume");
 
     }
 
     @Override
     public void onStop(){
         super.onStop();
-        Log.d(TAG, "Inside OnSTop");
+        Log.d(TAG, " OnSTop");
     }
 
     @Override
     public void onDestroy(){
         super.onDestroy();
-        Log.d(TAG, "Inside OnDestroy");
+        Log.d(TAG, "OnDestroy");
     }
 
 }
