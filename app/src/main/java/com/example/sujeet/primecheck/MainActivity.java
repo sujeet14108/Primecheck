@@ -7,14 +7,14 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    int x;
-    int y;
-    static final String nmber = "prime";
+    private int x;
+
+    private String display;
+    static final private String nmber = "prime";
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
         // Save the user's current game state
@@ -25,11 +25,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private TextView num;
-    public static int getRandomInteger(int maximum, int minimum){
-        return ((int) (Math.random()*(maximum - minimum))) + minimum;
+    private static  int getRandomInteger(){
+        return ((int) (Math.random()*(1 - 1000))) + 1000;
     }
 
-    public static int prime(int n){
+    private static int prime(int n){
         int i;
         int flag=0;
         for(i=2; i<=n/2; ++i)
@@ -65,9 +65,10 @@ public class MainActivity extends AppCompatActivity {
             x = savedInstanceState.getInt(nmber);
 
         } else {
-            x = getRandomInteger(1, 1000);
+            x = getRandomInteger();
         }
-        num.setText("Is "+Integer.toString(x) +" is a Prime Number?");
+        display="Is "+Integer.toString(x) +" is a Prime Number?";
+        num.setText(display);
 
 
 
@@ -75,26 +76,28 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-    public void showt(String text) {
+    private void showt() {
+        String text="Correct!";
         TextView textview = new TextView(MainActivity.this);
         textview.setText(text);
         textview.setTextSize(50);
         textview.setBackgroundColor(Color.WHITE);
         textview.setTextColor(Color.GREEN);
-        textview.setPadding(30,30,30,30);
+        textview.setPadding(0,0,0,10);
         Toast toast = new Toast(MainActivity.this);
         toast.setView(textview);
         toast.setDuration(Toast.LENGTH_SHORT);
         toast.setGravity(Gravity.BOTTOM, 0, 0);
         toast.show();
     }
-    public void showr(String text) {
+    private void showr() {
+        String text="Wrong!";
         TextView textview = new TextView(MainActivity.this);
         textview.setText(text);
         textview.setTextSize(50);
         textview.setBackgroundColor(Color.WHITE);
         textview.setTextColor(Color.RED);
-        textview.setPadding(30,30,30,30);
+        textview.setPadding(0,0,0,10);
         Toast toast = new Toast(MainActivity.this);
         toast.setView(textview);
         toast.setDuration(Toast.LENGTH_SHORT);
@@ -105,37 +108,39 @@ public class MainActivity extends AppCompatActivity {
     public void onClick(View v) {
 
         int r = prime(x);
-        Log.d(TAG, Integer.toString(y)+"ccc"+Integer.toString(r));
+        //Log.d(TAG, Integer.toString(y)+"and"+Integer.toString(r));
 
         switch (v.getId()) {
             case R.id.no:
                 if (r == 0)
-                    showt("Congo!");
+                    showt();
                    // Toast.makeText(MainActivity.this, "Congo!!", Toast.LENGTH_SHORT).show();
 
                 else
-                showr("Wrong!");
+                showr();
                    // Toast.makeText(MainActivity.this, "Wrong", Toast.LENGTH_SHORT).show();
 
-                x = getRandomInteger(1, 1000);
-                num.setText("Is "+Integer.toString(x) +" is a Prime Number?");
+                x = getRandomInteger();
+                display="Is "+Integer.toString(x) +" is a Prime Number?";
+                num.setText(display);
 
                 break;
             case R.id.yes:
                 if (r == 0)
-                    showr("Wrong!");
+                    showr();
                 else
-                    showt("Congo!");
+                    showt();
 
 
-                x = getRandomInteger(1, 1000);
-                num.setText("Is "+Integer.toString(x) +" is a Prime Number?");
-                break;
+                x = getRandomInteger();
+                display="Is "+Integer.toString(x) +" is a Prime Number?";
+                num.setText(display);
             case R.id.Next:
 
 
-                x = getRandomInteger(1, 1000);
-                num.setText("Is "+Integer.toString(x) +" is a Prime Number?");
+                x = getRandomInteger();
+                display="Is "+Integer.toString(x) +" is a Prime Number?";
+                num.setText(display);
                 break;
         }
     }
