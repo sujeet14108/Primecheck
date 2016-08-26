@@ -19,7 +19,7 @@ import android.widget.Toast;
 public class Hint extends AppCompatActivity {
 
 
-    private String display;
+
     static final private String nmber = "prime";
     static final private String Isprime = "isprime";
  private int prime = 0;
@@ -92,7 +92,7 @@ private int number=1;
         textview.setText(text);
         textview.setGravity(Gravity.CENTER);
         textview.setTypeface(null, Typeface.BOLD);
-        textview.setTextSize(28);
+        textview.setTextSize(25);
         textview.setBackgroundColor(Color.WHITE);
         textview.setTextColor(Color.RED);
         textview.setPadding(0,0,0,10);

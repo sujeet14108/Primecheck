@@ -49,9 +49,9 @@ public class cheat extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         int   n=extras.getInt(nmber);
 
-        int s= extras.getInt(Isprime);
+        prime= extras.getInt(Isprime);
 
-        prime = s;
+
         number=n;
 
 

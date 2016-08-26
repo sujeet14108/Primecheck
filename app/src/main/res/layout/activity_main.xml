@@ -68,7 +68,7 @@
             android:layout_height="wrap_content"
             android:text="@string/next"
             android:onClick="onClick"
-            android:textColor="#000"/>
+            android:textColor="#000" />
 
 
 

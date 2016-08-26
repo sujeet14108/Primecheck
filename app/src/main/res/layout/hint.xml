@@ -35,7 +35,6 @@
         android:onClick="onClick"
         android:textColor="#000"
         style="?android:attr/buttonBarButtonStyle"
-
         android:layout_marginEnd="10dp"/>
 
     </LinearLayout>
