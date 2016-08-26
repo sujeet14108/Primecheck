@@ -33,6 +33,7 @@ public class cheat extends AppCompatActivity {
     private static final String TAG = "Hint";
 
     private int r=0;
+    //Rotation Handle
     public void onSaveInstanceState(Bundle savedInstanceState) {
         // Save the user's current game state
         savedInstanceState.putInt(nmber, number);
@@ -76,6 +77,7 @@ public class cheat extends AppCompatActivity {
 
 
     }
+    //button listner
     public void onClick(View v) {
 
 
@@ -95,6 +97,7 @@ public class cheat extends AppCompatActivity {
 
         }
     }
+    //fn to show toast
     private void show_text(String text) {
 
         TextView textview = new TextView(cheat.this);
@@ -111,6 +114,8 @@ public class cheat extends AppCompatActivity {
         toast.setGravity(Gravity.BOTTOM, 0, 0);
         toast.show();
     }
+
+    //provding data back on back button press
     @Override
     public void onBackPressed() {
 

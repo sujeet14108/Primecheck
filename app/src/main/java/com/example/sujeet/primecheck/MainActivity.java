@@ -172,6 +172,7 @@ public class MainActivity extends AppCompatActivity {
 
         }
     }
+    //Handling data coming after back
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -191,6 +192,7 @@ public class MainActivity extends AppCompatActivity {
         }
         Log.d(TAG,"mml");
     }
+    //Toast formatting
     private void show_text(String text) {
 
         TextView textview = new TextView(MainActivity.this);

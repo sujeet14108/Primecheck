@@ -70,6 +70,7 @@ private int number=1;
 
 
     }
+    //button listner
     public void onClick(View v) {
 
 
@@ -86,6 +87,7 @@ private int number=1;
 
         }
     }
+    //Toast Styling
     private void show_text(String text) {
 
         TextView textview = new TextView(Hint.this);
@@ -102,6 +104,7 @@ private int number=1;
         toast.setGravity(Gravity.BOTTOM, 0, 0);
         toast.show();
     }
+    //Passing Data on Back button
     @Override
     public void onBackPressed() {
 
