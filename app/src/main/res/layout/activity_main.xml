@@ -71,5 +71,30 @@
             android:textColor="#000"/>
 
 
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        style="?android:attr/buttonBarStyle"
+        android:layout_marginTop="20dp">
+        <Button
+            android:id="@+id/Hint"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hint"
+            android:onClick="onClick"
+            android:textColor="#000"/>
+        <Button
+            android:id="@+id/cheat"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Cheat"
+            android:onClick="onClick"
+            android:textColor="#000"/>
     </LinearLayout>
 </LinearLayout>

@@ -3,5 +3,11 @@
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="next">Next</string>
+    <string name="hint">Hint</string>
+    <string name="Cheat">Cheat</string>
+    <string name="CheatHint">Select Button to get hint!</string>
+    <string name="CheatText">Beware Your action is recording</string>
+    <string name="Showhint">Show Hint</string>
+    <string name="Showcheat">Show Cheat</string>
     <string name="title">"Are you a Prime Master!!"</string>
 </resources>

@@ -1,7 +1,9 @@
 package com.example.sujeet.primecheck;
 
 
+import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -15,6 +17,9 @@ public class MainActivity extends AppCompatActivity {
 
     private String display;
     static final private String nmber = "prime";
+    static final private String Isprime = "isprime";
+
+
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
         // Save the user's current game state
@@ -57,6 +62,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         num=(TextView) findViewById(R.id.txt);
+
+
 
 
 
@@ -118,11 +125,13 @@ public class MainActivity extends AppCompatActivity {
 
                 else
                 showr();
-                   // Toast.makeText(MainActivity.this, "Wrong", Toast.LENGTH_SHORT).show();
 
+                   // Toast.makeText(MainActivity.this, "Wrong", Toast.LENGTH_SHORT).show();
+              /*
                 x = getRandomInteger();
                 display="Is "+Integer.toString(x) +" is a Prime Number?";
                 num.setText(display);
+                */
 
                 break;
             case R.id.yes:
@@ -130,11 +139,13 @@ public class MainActivity extends AppCompatActivity {
                     showr();
                 else
                     showt();
+                break;
 
-
+              /*
                 x = getRandomInteger();
                 display="Is "+Integer.toString(x) +" is a Prime Number?";
-                num.setText(display);
+                num.setText(display);*/
+
             case R.id.Next:
 
 
@@ -142,11 +153,60 @@ public class MainActivity extends AppCompatActivity {
                 display="Is "+Integer.toString(x) +" is a Prime Number?";
                 num.setText(display);
                 break;
+
+            case  R.id.Hint:
+                Intent intent = new Intent(com.example.sujeet.primecheck.MainActivity.this,Hint.class);
+
+                /*intent.putExtra(nmber,x);
+                intent.putExtra(Isprime,r);*/
+                startActivityForResult(intent, 1);
+                break;
+
+            case  R.id.cheat:
+                Intent intent2 = new Intent(com.example.sujeet.primecheck.MainActivity.this,cheat.class);
+
+                intent2.putExtra(nmber,x);
+                intent2.putExtra(Isprime,r);
+                startActivityForResult(intent2, 1);
+                break;
+
         }
     }
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 1) {
+            if(resultCode == RESULT_OK){
+                String st=data.getStringExtra("result");
+                int x=Integer.parseInt(st);
+                if(x==1)
+                    show_text("Hint Taken");
+                if(x==2)
+                    show_text("Cheated");
+                if(x==3)
+                    show_text("Cheated as well as Hint taken");
+                Log.d(TAG,st);
+            }
+        }
+        Log.d(TAG,"mml");
+    }
+    private void show_text(String text) {
 
-
-
+        TextView textview = new TextView(MainActivity.this);
+        textview.setText(text);
+        textview.setTextSize(28);
+        textview.setGravity(Gravity.CENTER);
+        textview.setTypeface(null, Typeface.BOLD);
+        textview.setBackgroundColor(Color.WHITE);
+        textview.setTextColor(Color.RED);
+        textview.setPadding(0,0,0,10);
+        Toast toast = new Toast(MainActivity.this);
+        toast.setView(textview);
+        toast.setDuration(Toast.LENGTH_SHORT);
+        toast.setGravity(Gravity.BOTTOM, 0, 0);
+        toast.show();
+    }
     @Override
     public void onStart()
     {
